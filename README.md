@@ -10,9 +10,7 @@ At initialization and at any subsequent QR code position, it is assumed that the
 
 
 ## Schedule(Gantt chart)
-
-
-
+![image](https://raw.githubusercontent.com/loyzjve/Suivi-de-ligne-virtuelle-par-QR-Code/main/Pictures%20for%20readme%20file/gantt.JPG?token=GHSAT0AAAAAAB5TS4RITBQYRGVYF332QRUIY6PN7MQ)
 
 ## The process
 1. At initialization, we place a certain number of QR codes under our hypothesis.
