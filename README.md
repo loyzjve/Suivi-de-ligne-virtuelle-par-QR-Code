@@ -10,7 +10,7 @@ This subject consists in realizing a trajectory visualization by certain QR code
 ### Context
 This project is for a master 2 PAR's project from 2022 to 2023. Mr LENGAGNE would like to create a practical work about the mobile robot and Aruco's QR codes. Because of being flexible to change trajectories, He prefers to use QR codes rather than trace directly on the ground. In this case, it should create a virtual line according to several QR codes with a mobile robot. Therefore, the student must teleguide the robot keeping tracking in the first run for all the QR codes. Then it should be able to calculate the distance between the robot and QR codes as well as their different angles after the first run wherever the robot is. 
 
-### Hypothesis
+### Protocol and hypothesis
 At initialization and at any subsequent QR code position, it is assumed that the camera can observe at least 2 QR codes (for example, a landmark X and an after landmark X+1).
 
 ## Planning
@@ -22,7 +22,7 @@ We divide this project into three parts. Localisations of QR codes, calculate a 
 
 ## Result
 ### Localisations of QR codes
-In this part, input of problem are QR codes of Aruco and Mobile robot with a RGBD camera. However, we should to get all Aruco's QR code coordinate estimates as outputs.  
+In this part, input of problem are QR codes of Aruco and Mobile robot with a RGB camera. However, we should to get all Aruco's QR code coordinate estimates as outputs.  
 ![image](https://github.com/loyzjve/Suivi-de-ligne-virtuelle-par-QR-Code/blob/main/Pictures%20for%20readme%20file/pertubation.jpg)  
 
 It should calculate the matrix of transformation at first.  
@@ -57,7 +57,7 @@ Compared to B-Spline, least square is suit to use in more simple situation rathe
 Moreover, its residue E^2=∑|V-theta*M|^2=32.3812 is large. Therefore, we need to choose B-Spline. However, the calculation of B-Spline in high order might be complex.
 
 ### Display of distances and angles between robot and QR codes
-In this part, input of problem is a trajectory. We should display of distances and angles between robot and QR codes by using the function of distance and the difference between 2 angles.
+In this part, input of problem are some crossing points.We would like to get a trajectory passing through all points by using the function of distance and the difference between 2 angles.
 
 ## Disclusion
 To solve the localization and mapping problem for square markers in 2 dimensions. Rafael's group came up with a method[1].They first created a closed loop using translation errors and rotation errors. So they got a pose chart. Finally, they minimized reprojection errors.
