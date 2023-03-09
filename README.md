@@ -54,7 +54,10 @@ In this part, input of problem is a trajectory. We should display of distances a
 ## Disclusion
 To solve the localization and mapping problem for square markers in 2 dimensions. Rafael's group came up with a method.They first created a closed loop using translation errors and rotation errors. So they got a pose chart. Finally, they minimized reprojection errors.
 
+The differences between this projet and their projet are choises of approach. We choose the transformation of landmarks to solve the problem of closed loop while they choose Bundle Adjustment. Besides, I choose B-Spline to calculate a trajectory while they choose minimization of reprojection error.
 
 ## Conclusion
+This projet need to be continue. I will correct programs of B-Spline and combine three of them. Otherwise, we should compile programs in reality. 
 
+During this projet, I learn a lot in how to present a projet. Mr LENGAGNE help me a lot in this part. I am very grateful to him.
 
