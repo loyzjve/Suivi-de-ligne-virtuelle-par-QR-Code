@@ -22,20 +22,20 @@ We divide this project into three parts. Localisations of QR codes, calculate a 
 
 ## Result
 ### Localisations of QR codes
-In this part, input of problem are QR codes of Aruco and Mobile robot with a RGB camera. However, we should to get all Aruco's QR code coordinate estimates as outputs.  
+In this part, input of problems are QR codes of Aruco and Mobile robot with a RGB camera. However, we should get all Aruco's QR code coordinate estimates as outputs.   
 ![image](https://github.com/loyzjve/Suivi-de-ligne-virtuelle-par-QR-Code/blob/main/Pictures%20for%20readme%20file/pertubation.jpg)  
 
 It should calculate the matrix of transformation at first.  
 ![image](https://github.com/loyzjve/Suivi-de-ligne-virtuelle-par-QR-Code/blob/main/Pictures%20for%20readme%20file/f2.JPG)   
-Then it's important to create a closed loop by all the matrix of transformation.  
+Then it's important to create a closed loop by all the matrices of transformation.  
 ![image](https://github.com/loyzjve/Suivi-de-ligne-virtuelle-par-QR-Code/blob/main/Pictures%20for%20readme%20file/f1.JPG)  
-In fact, there are always some noise in measure. Therefore, it should minimise the function by using least square.
+In fact, there is always some noise in measure. Therefore, it should minimize the function by using least squares.
 
 ### Calculate a trajectory
-In this part, input of problem are all Aruco's QR code coordinate estimates. We should to calculate a trajectory which need to pass some important points beside the landmarks. We define 30 cm between the important point and the landmark at the axis x.
+In this part, input of problems are all Aruco's QR code coordinate estimates. We should calculate a trajectory which needs to pass some important points beside the landmarks. We define 30 cm between the important point and the landmark at the axis x.
 
 #### First approach : B-Spline
-A B-spline function consists of a smooth curve controlled by some control points. In our case, we have 8 landmarks. Therefore I chosed to use B-Spline in 2nd order with 8 segments.  
+A B-spline function consists of a smooth curve controlled by some control points. In our case, we have 8 landmarks. Therefore I choose to use B-Spline in 2nd order with 8 segments.  
 ![image](https://github.com/loyzjve/Suivi-de-ligne-virtuelle-par-QR-Code/blob/main/Pictures%20for%20readme%20file/BS.jpg)  
 
 It should be achieved by 5 steps :
@@ -51,18 +51,18 @@ Control point : Pk;
 Segments : Sk;
 Polynomial : Qi(t).
 
-#### Orther approach : Least square
-Compared to B-Spline, least square is suit to use in more simple situation rather than our case. It isn't able to pass every important points in our test.  
+#### Other approach : Least square
+Compared to B-Spline, least squares are suited to use in more simple situations rather than in our case. It isn’t able to pass every important point in our test. 
 ![image](https://github.com/loyzjve/Suivi-de-ligne-virtuelle-par-QR-Code/blob/main/Pictures%20for%20readme%20file/MC.jpg)  
 Moreover, its residue E^2=∑|V-theta*M|^2=32.3812 is large. Therefore, we need to choose B-Spline. However, the calculation of B-Spline in high order might be complex.
 
 ### Display of distances and angles between robot and QR codes
-In this part, input of problem are some crossing points.We would like to get a trajectory passing through all points by using the function of distance and the difference between 2 angles.
+In this part, the input of the problem are some crossing points.We would like to get a trajectory passing through all points by using the function of distance and the difference between 2 angles.
 
 ## Disclusion
-To solve the localization and mapping problem for square markers in 2 dimensions. Rafael's group came up with a method[1].They first created a closed loop using translation errors and rotation errors. So they got a pose chart. Finally, they minimized reprojection errors.
+To solve the localization and mapping problem for square markers in 2 dimensions. Rafael's group came up with a method[1].They first created a closed loop using translation errors and rotation errors. So they got a pose chart. Finally, they minimize reprojection errors.
 
-The differences between this projet and their projet are choises of approach. We choose the transformation of landmarks to solve the problem of closed loop while they choose Bundle Adjustment. Besides, I choose B-Spline to calculate a trajectory while they choose minimization of reprojection error.
+The differences between this project and their project are choices of approach. We choose the transformation of landmarks to solve the problem of closed loop while they choose Bundle Adjustment. Besides, I choose B-Spline to calculate a trajectory while they choose minimization of reprojection error.
 
 ## Conclusion
 This projet need to be continue. I will correct programs of B-Spline and combine three of them. Otherwise, we should compile programs in reality. 
