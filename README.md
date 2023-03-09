@@ -8,7 +8,7 @@ This subject consists in realizing a trajectory visualization by certain QR code
 ![image](https://github.com/loyzjve/Suivi-de-ligne-virtuelle-par-QR-Code/blob/main/Pictures%20for%20readme%20file/IMG_20230306_112358.jpg)  
 
 ### Context
-This project is for a master 2 PAR project. Mr LENGAGNE would like to create a practical work about the mobile robot and Aruco's QR codes. Because of being flexible to change trajectories, He prefers to use QR codes rather than trace directly on the ground. In this case, it should create a virtual line according to several QR codes with a mobile robot. Therefore, the student must teleguide the robot keeping tracking in the first run for all the QR codes. Then it should be able to calculate the distance between the robot and QR codes as well as their different angles after the first run wherever the robot is. 
+This project is for a master 2 PAR's project from 2022 to 2023. Mr LENGAGNE would like to create a practical work about the mobile robot and Aruco's QR codes. Because of being flexible to change trajectories, He prefers to use QR codes rather than trace directly on the ground. In this case, it should create a virtual line according to several QR codes with a mobile robot. Therefore, the student must teleguide the robot keeping tracking in the first run for all the QR codes. Then it should be able to calculate the distance between the robot and QR codes as well as their different angles after the first run wherever the robot is. 
 
 ### Hypothesis
 At initialization and at any subsequent QR code position, it is assumed that the camera can observe at least 2 QR codes (for example, a landmark X and an after landmark X+1).
