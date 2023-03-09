@@ -28,15 +28,32 @@ It should calculate the matrix of transformation at first.![image]() Then it's i
 ### Calculate a trajectory
 In this part, input of problem are all Aruco's QR code coordinate estimates. We should to calculate a trajectory which need to pass some important points beside the landmarks. We define 30 cm between the important point and the landmark at the axis x.
 
-
-
 #### First approach : B-Spline
+A B-spline function consists of a smooth curve controlled by some control points. In our case, we have 8 landmarks. Therefore I chosed to use B-Spline in 2nd order with 8 segments.
 
-#### Orther approach : 
+It should be achieved by 5 steps :
+1. Decide numbers of segments and numbers of nodes.
+2. Initialize the least squares matrix M.
+3. Fill the least squares matrix M row by row with the functions of the subsets.
+4. Calculation of optimal control points.
+5. Calculation of y estimated with the vector of optimal control points.
+
+Some notions:
+Basic function :A0(t), A1(t), A2(t), B0(t), B1(t), B2(t), C0(t), C1(t), C2(t);
+Control point : Pk;
+Segments : Sk;
+Polynomial : Qi(t).
+
+#### Orther approach : Least square
+Compared to B-Spline, least square is suit to use in more simple situation rather than our case. It isn't able to pass every important points in our test![image]()
+Moreover, its residue E^2=∑|V-theta*M|^2=32.3812 is large. Therefore, we need to choose B-Spline. However, the calculation of B-Spline in high order might be complex.
 
 ### Display of distances and angles between robot and QR codes
+In this part, input of problem is a trajectory. We should display of distances and angles between robot and QR codes by using the function of distance and the difference between 2 angles.
 
 ## Disclusion
+To solve the localization and mapping problem for square markers in 2 dimensions. Rafael's group came up with a method.They first created a closed loop using translation errors and rotation errors. So they got a pose chart. Finally, they minimized reprojection errors.
+
 
 ## Conclusion
 
